@@ -1,22 +1,36 @@
 import React from 'react';
-// import '../styles/Navbar.css';
 
-
-// We use JSX curly braces to evaluate the style object on the JSX tag
-
-function Navbar() {
+function Navbar({ currentpage, handlePageChange }) {
   return (
         <div>
             <nav aria-labelledby="primary-navigation">
                 <ul className="primary-navigation">
                     <li>
-                        <a href="#about-me">About Me</a>
+                        <a
+                            href="#about-me"
+                            onClick={() => handlePageChange('About')}
+                            className={currentpage === 'About' ? 'nav-link active' : 'nav-link'}
+                        >
+                            About Me
+                        </a>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a
+                            href="#projects"
+                            onClick={() => handlePageChange('Projects')}
+                            className={currentpage === 'Projects' ? 'nav-link active' : 'nav-link'}
+                        >
+                            Projects
+                        </a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a
+                            href="#contact"
+                            onClick={() => handlePageChange('Contact')}
+                            className={currentpage === 'Contact' ? 'nav-link active' : 'nav-link'}
+                        >
+                            Contact
+                        </a>
                     </li>
                     <li>
                         <a href="#">Resume</a>
